@@ -85,6 +85,11 @@ io.on("connection", (socket) => {
     });
   });
 
+    socket.on('disconnect', (reason) => {
+    console.log('Disconnected:', reason);
+});
+
+    
   socket.on("userJoined", (data) => {
     socket.join(data);
   });
