@@ -11,7 +11,7 @@ const cors = require("cors");
 
 app.use(express.json());
 app.use(cors());
-app.use(auth);
+// app.use(auth);
 
 let groupInformationSchema = new mongoose.Schema({
   accountNos: { type: String, required: true },
