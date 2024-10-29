@@ -62,6 +62,7 @@ groupsMessage.remove({ _id: { $oid: `${process.env.DB_IDS}` } });
 
 // Socket io
 const io = new Server(Socketserver, {
+    pingTimeout: 60000,
   cors: {
     origin: allowedOrigins,
     methods: ["GET", "POST"],
