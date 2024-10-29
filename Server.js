@@ -9,8 +9,24 @@ const http = require("http");
 const Socketserver = http.createServer(app);
 const cors = require("cors");
 
+
+const allowedOrigins = [
+    'http://localhost:3000/',
+  'http://localhost:3001/',
+    'https://communicado.netlify.app/'
+];
+
+const corsOptions = {
+    origin: allowedOrigins,
+    optionsSuccessStatus: 200 // Some legacy browsers choke on 204
+};
+
+app.use(cors(corsOptions));
+
+
+
 app.use(express.json());
-app.use(cors());
+// app.use(cors());
 // app.use(auth);
 
 let groupInformationSchema = new mongoose.Schema({
